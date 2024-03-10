@@ -1,0 +1,12 @@
+body {
+	background-color: var(--accent-purple);
+}
+
+p {
+	color: #FFFFFF;
+}
+
+.navbar_active {
+	color: #FFFFFF;
+	background: var(--accent-purple);
+}

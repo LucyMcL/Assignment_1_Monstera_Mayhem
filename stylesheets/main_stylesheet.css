@@ -1,0 +1,337 @@
+
+/*
+
+Notes
+
+Colour palette:
+https://coolors.co/26910c-79de5f-360642-d75ff5-0c2107 (complementary scheme)
+
+Hex to RGB Converter (for transparency):
+https://www.rapidtables.com/convert/color/hex-to-rgb.html
+
+Research on typeface accessibility and pairing:
+https://newbird.com/best-google-fonts-to-use-on-your-website/
+https://www.fontpair.co/all (specifically Google Font pairings)
+
+Typefaces:
+https://fonts.google.com/specimen/Arvo
+https://fonts.google.com/specimen/Lato
+
+Icons:
+https://www.flaticon.com/
+
+Images:
+https://www.pexels.com/
+
+
+*/
+
+
+/* Variables (colour) */
+
+:root { /* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/:root - I wanted to try setting colours as variables and used this as a reference */
+  --primary-green: #26910C;
+  --secondary-green: #79DE5F;
+  --accent-purple: #360642;
+  --accent-pink: #D75FF5;
+  --text-black: #0C2107;
+}
+
+
+/*Typefaces and Fonts (Google)*/
+
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arvo-bold {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* IDs */
+
+#header {
+    background-image: url("../images/header_bkg.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 40px 0px;
+    width: 100%;
+    text-shadow: 2px 2px 4px rgba(54,6,66,0.8); /* to make text more visible, converting the secondary purple variable into rgba for transparency */
+}
+
+#navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* centres links vertically (personal reminder) */
+    padding: 0px 80px;
+    background-color: var(--primary-green);
+}
+
+#page_overview {
+
+}
+
+
+#gallery { /* Source: https://www.w3schools.com/css/css_grid.asp - used a reference to make a grid for the gallery */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 24px;
+    margin: 24px;
+}
+
+#youtube_video { /* might want to return and play with width/height here */
+	text-align: center;
+	padding: 24px;
+}
+
+#footer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background: var(--secondary-green);
+	position: sticky;
+	bottom: 0px;
+}
+
+#footer li {
+	list-style-type: none;
+	font-family: "Lato", sans-serif;
+  	font-weight: 700;
+  	font-style: normal;
+}
+
+
+/* Classes */
+
+.navbar_active {
+	color: var(--text-black);
+	font-family: 'Arvo', serif;
+	font-weight: 700;
+	text-decoration: none;
+	background: white;
+    padding: 16px 32px;
+}
+
+.navbar_inactive {
+	color: var(--text-black);
+	font-family: 'Arvo', serif;
+	font-weight: 400;
+	text-decoration: none;
+	padding: 16px 32px;
+}
+
+.container_bkg {
+	background-color: rgba(121,222,95,0.1);
+	margin: 40px 0px 40px 0px;
+	padding: 16px 16px 40px 16px;
+	text-align: center;
+}
+
+.feature_title {
+	font-family: "Lato", sans-serif;
+  	font-weight: 700;
+  	font-style: italic;
+	padding: 0px 40px 0px 56px;
+	color: var(--accent-purple);
+	text-align: left;
+}
+
+.feature_subtitle {
+	font-family: "Lato", sans-serif;
+  	font-weight: 700;
+  	font-style: italic;
+	padding: 0px 56px;
+	color: var(--primary-green);
+	text-align: left;
+}
+
+.column_grid {
+	display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 16px;
+    margin: 0px 40px;
+    text-align: left;
+}
+
+.column_text_container {
+  	padding: 16px;
+}
+
+.column_image_container{
+	padding: 16px;
+}
+
+
+.column_image_container img{
+     width: 100%;
+}
+
+.prop_steps {
+	list-style-type: none;
+	font-family: "Lato", sans-serif;
+  	font-weight: 700;
+  	font-style: normal;
+}
+
+
+.gallery_image_container {
+	position: relative;
+    width: 100%;
+    padding-top: 100%; /* Source: https://web.dev/articles/aspect-ratio - I was struggling to get the gallery images to stay as 1:1 squares and used this as a reference */
+}
+
+.gallery_image_container img {
+	position: absolute;
+    top: 0; /* Source: https://www.w3schools.com/cssref/pr_pos_top.php - to help anchor images to the top (and left, below) corner of div */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Source: https://web.dev/articles/aspect-ratio - as above */
+}
+
+.span_monstera {
+	color: var(--secondary-green);
+	font-family: 'Arvo', serif;
+	font-weight: 700;
+}
+
+.span_st {
+	text-decoration: line-through;
+}
+
+.footer_column {
+	text-align: center;
+	border: 4px ;
+	padding: 0px 80px;
+}
+
+
+/* Main Elements */
+
+body {
+	margin: 0px;
+	height:100%;
+}
+
+main {
+	margin: 0px 80px;
+	height:100%;
+}
+
+h1 {
+	color: var(--accent-pink);
+	font-family: 'Arvo', serif;
+	font-weight: 700;
+}
+
+h2 {
+	color: var(--primary-green);
+	font-family: 'Arvo', serif;
+	font-weight: 700;
+	padding: 24px 0px 0px 0px;
+}
+
+h4 {
+	font-family: "Lato", sans-serif;
+ 	font-weight: 700;
+  	font-style: normal;
+}
+
+p {
+	color: var(--text-black);
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+  	font-style: normal;
+}
+
+a:hover {
+	color: var(--secondary-green);
+	cursor: pointer;
+}
+
+button {
+	border: none;
+	border-radius: 2px;
+	background: var(--accent-purple);
+	color: #FFFFFF;
+	padding: 16px 40px;
+	font-family: "Arvo", serif;
+  	font-weight: 700;
+  	font-style: normal;
+}
+
+button:hover {
+	background: var(--accent-pink);
+	box-shadow: 0px 4px 8px rgba(54,6,66,0.4);
+	padding: 18px 42px;
+	margin: -3px;
+	font-size: 100%;
+	cursor:pointer;
+}
+
+iframe {
+	width:800px;
+	height:450px;
+}
+
+ul, ol {
+	padding: 0px;
+}
+
+li {
+	padding: 4px;
+	font-family: "Lato", sans-serif;
+ 	font-weight: 400;
+  	font-style: normal;
+}
+
+table {
+	margin: 16px;
+}
+
+th {
+	padding: 0px 0px 24px 0px;
+	font-family: "Arvo", serif;
+  	font-weight: 700;
+  	font-style: normal;
+  	color: var(--primary-green);
+}
+
+td {
+	padding: 16px 40px 16px 0px;
+	border-top: 2px solid #000;
+	font-family: "Lato", sans-serif;
+  	font-weight: 300;
+  	font-style: normal; 
+}
